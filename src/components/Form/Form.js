@@ -1,58 +1,77 @@
-import { useState, useEffect, useRef } from 'react';
-import Input from './Input';
-import Button from '../UI/Button/Button';
-import '../../assets/styles/form.css';
+import { useState, useEffect, useRef } from "react";
+import Input from "./Input";
+import Button from "../UI/Button/Button";
+import "../../assets/styles/form.css";
 
+function Form({
+  setIngredients,
+  loader,
+  error,
+  setError,
+  handleClear,
+  nutritionData,
+}) {
+  const [input, setInput] = useState("");
+  const inputRef = useRef(null);
 
-function Form({ setIngredients, loader, error, setError }) {
-    const [input, setInput] = useState('');
-    const inputRef = useRef(null);
+  const setInputFocus = () => {
+    if (error || loader) return;
 
-    const setInputFocus = () => {
-        if (error || loader) return;
+    if (!error && !loader) {
+      setInput("");
+      inputRef.current.focus();
+    }
+  };
 
-        if (!error && !loader) {
-            setInput('');
-            inputRef.current.focus();
-        }
-    };
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-        setInput('');
-        inputRef.current.blur();
+    setInput("");
+    inputRef.current.blur();
 
-        if (input.trim() === '') setError('no input');
-        else {
-            const ingredientsList = input
-                .split(',')
-                .map((ingredient) => ingredient.toLowerCase().trim());
-            setIngredients(ingredientsList);
-        }
-    };
+    if (input.trim() === "") setError("no input");
+    else {
+      const ingredientsList = input
+        .split(",")
+        .map((ingredient) => ingredient.toLowerCase().trim());
+      setIngredients(ingredientsList);
+    }
+  };
 
-    useEffect(() => {
-        setInputFocus();
-    }, [error, loader]);
+  const onClearClick = () => {
+    handleClear();
+    setInput(""); // Is component ki input state ko clear karega
+    inputRef.current.focus();
+  };
 
-    return (
-        <form className="form" onSubmit={handleSubmit}>
-            <Input 
-                input={input} 
-                setInput={setInput} 
-                inputRef={inputRef}
-            />
+  useEffect(() => {
+    setInputFocus();
+  }, [error, loader]);
 
-            <Button 
-                className='form-btn' 
-                type="submit"
-                onClick={handleSubmit}
-            >
-                Analyze
-            </Button>
-        </form>
-    );
+  return (
+    <form className="form" onSubmit={handleSubmit}>
+      <Input input={input} setInput={setInput} inputRef={inputRef} />
+
+      <Button
+        className="form-btn"
+        type="submit"
+        onClick={handleSubmit}
+        disabled={loader}
+      >
+        {loader ? "Analyzing..." : "Analyze"}
+      </Button>
+
+      {nutritionData && (
+        <Button
+          className="form-btn btn-clear"
+          type="button"
+          onClick={onClearClick}
+        >
+          Clear Result
+        </Button>
+      )}
+    </form>
+  );
 }
-
 
 export default Form;

@@ -17,72 +17,79 @@ import { useDataFetching } from './hooks/useDataFetching/useDataFetching';
 import './assets/styles/style.css';
 
 function App() {
-	const [nutritionData, setNutritionData] =
-		useLocalStorage('nutritionAnalysis');
-	const { setIngredients, loader, error, setError } =
-		useDataFetching(setNutritionData);
+    const [nutritionData, setNutritionData] =
+        useLocalStorage('nutritionAnalysis');
+    const { setIngredients, loader, error, setError } =
+        useDataFetching(setNutritionData);
 
-	let animationRef = useRef(null);
+    let animationRef = useRef(null);
 
-	const handleCloseMessage = (e) => {
-		if (
-			e.target.classList.contains('modal') ||
-			e.target.classList.contains('message-btn')
-		) {
-			animationRef.current.reverse();
-		}
-	};
+    const handleCloseMessage = (e) => {
+        if (
+            e.target.classList.contains('modal') ||
+            e.target.classList.contains('message-btn')
+        ) {
+            animationRef.current.reverse();
+        }
+    };
 
-	return (
-		<div className='main-container'>
-			{loader && (
-				<Modal>
-					<Loader />
-				</Modal>
-			)}
+    const handleClear = () => {
+        setNutritionData(null); 
+    };
 
-			{error && (
-				<Modal onClick={handleCloseMessage}>
-					<Message
-						error={error}
-						setError={setError}
-						animationRef={animationRef}
-						onClick={handleCloseMessage}
-					>
-						<ErrorMessage message={error} />
-					</Message>
-				</Modal>
-			)}
+    return (
+        <div className='main-container'>
+            {loader && (
+                <Modal>
+                    <Loader />
+                </Modal>
+            )}
 
-			<Header />
+            {error && (
+                <Modal onClick={handleCloseMessage}>
+                    <Message
+                        error={error}
+                        setError={setError}
+                        animationRef={animationRef}
+                        onClick={handleCloseMessage}
+                    >
+                        <ErrorMessage message={error} />
+                    </Message>
+                </Modal>
+            )}
 
-			<BgAnimation>
-				<Instructions />
-				<Form
-					setIngredients={setIngredients}
-					loader={loader}
-					error={error}
-					setError={setError}
-				/>
+            <Header />
 
-				{nutritionData && (
-					<MainContent>
-						<ListContainer containerType='ingredients'>
-							<Ingredients
-								nutritionData={nutritionData.ingredients}
-							/>
-						</ListContainer>
+            <BgAnimation>
+                <Instructions />
+                {/* ===== FORM COMPONENT MEIN PROPS UPDATE KIYE GAYE HAIN ===== */}
+                <Form
+                    setIngredients={setIngredients}
+                    loader={loader}
+                    error={error}
+                    setError={setError}
+                    handleClear={handleClear}
+                    nutritionData={nutritionData}
+                />
 
-						<ListContainer containerType='facts'>
-							<NutritionFacts nutritionData={nutritionData} />
-						</ListContainer>
-					</MainContent>
-				)}
+                {nutritionData && (
+                    <MainContent>
+                        <ListContainer containerType='ingredients'>
+                            <Ingredients
+                                nutritionData={nutritionData.ingredients}
+                            />
+                        </ListContainer>
 
-				<Footer />
-			</BgAnimation>
-		</div>
-	);
+                        <ListContainer containerType='facts'>
+                            <NutritionFacts nutritionData={nutritionData} />
+                        </ListContainer>
+                    </MainContent>
+                )}
+
+                <Footer />
+            </BgAnimation>
+        </div>
+    );
 }
 
 export default App;
