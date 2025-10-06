@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-<a href="https://alinafedoriv-nutrition-analysis.netlify.app/" target="_blank">
+<a href="https://nutrition-analysis-ruddy.vercel.app/" target="_blank">
     <img src="https://github.com/afedoriv/nutrition-analysis/assets/99702784/4ba7dcd5-410f-4a25-8d0d-646a8e6b7b8b" alt="Logo" width="140">
 </a>
 
@@ -46,15 +46,14 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=f6bdd0&lines=Nutrition+Analysis+App)](https://git.io/typing-svg)
 
-https://github.com/afedoriv/nutrition-analysis/assets/99702784/1cd43d7a-d5ba-46bc-967f-e3f9d6e80e55
-
+https://nutrition-analysis-ruddy.vercel.app
 <br />
 <details>
   <summary>Application Screenshots</summary>
 
 <br />
 <div align="center">
-  <img src="https://github.com/afedoriv/nutrition-analysis/assets/99702784/7d77393b-2e73-4901-889b-528ab5dfcbda" width="100%"/>
+  <img src="https://nutrition-analysis-ruddy.vercel.app/assets/99702784/7d77393b-2e73-4901-889b-528ab5dfcbda" width="100%"/>
 </div>
 </details>
 
