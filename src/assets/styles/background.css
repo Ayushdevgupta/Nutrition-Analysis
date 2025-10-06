@@ -1,0 +1,27 @@
+.background-container {
+    min-height: 67vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    z-index: -2;
+    overflow: hidden;
+}
+.icon {
+    position: absolute;
+    z-index: -1;
+}
+.icon img {
+    width: 45px;
+}
+
+
+@media all and (max-width: 540px) {
+    .icon img {
+        width: 36px;
+    }
+}
+@media all and (max-width: 320px) {
+    .icon img {
+        width: 33px;
+    }
+}

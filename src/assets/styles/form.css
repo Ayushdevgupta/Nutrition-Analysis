@@ -1,0 +1,80 @@
+.form {
+    margin: 40px 40px 60px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.input-field {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    color: #545454;
+    cursor: text;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    outline: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 50px;
+    min-width: 240px;
+    width: 60%;
+}
+.input-field::placeholder {
+    color: #808080;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+}
+.form-btn {
+    background-image: linear-gradient(90deg, #6acc00, #6acc00, #6acc00, #0ba360);
+    margin-left: 50px;
+}
+
+
+@media all and (max-width: 660px) {
+    .form {
+        margin: 40px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .input-field {
+        width: 90%;
+    }
+    .form-btn {
+        margin: 25px 0 0;
+    }
+}
+@media all and (max-width: 540px) {
+    .input-field,
+    .input-field::placeholder {
+        font-size: 11px;
+    }
+}
+@media all and (max-width: 500px) {
+    .form {
+        margin: 40px 10px;
+    }
+}
+@media all and (max-width: 360px) {
+    .form {
+        margin: 40px 5px;
+    }
+    .input-field {
+        font-size: 10px;
+        padding-left: 20px;
+        padding-right: 10px;
+        height: 40px;
+    }
+    .input-field::placeholder {
+        font-size: 10px;
+    }
+}
+@media all and (max-width: 320px) {
+    .form {
+        margin: 30px 5px;
+    }
+    .form-btn {
+        margin: 20px 0 0;
+    }
+}

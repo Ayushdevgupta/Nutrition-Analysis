@@ -1,0 +1,37 @@
+.ingredients-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.facts-container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 0px 40px 20px;
+    align-self: center;
+}
+.heading-secondary {
+    color: #545454;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+@media all and (max-width: 540px) {
+    .facts-container {
+        padding: 0px 30px 15px;
+    }
+    .heading-secondary {
+        font-size: 26px;
+    }
+}
+@media all and (max-width: 320px) {
+    .facts-container {
+        margin-bottom: 10px;
+        padding: 0px 25px 15px;
+    }
+    .heading-secondary {
+        font-size: 24px;
+    }
+}

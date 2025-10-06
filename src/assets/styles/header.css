@@ -1,0 +1,58 @@
+.header {
+    background: url('../images/image-avocado.png');
+    background-color: #f6bdd1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 33vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.heading-primary {
+    color: #ffffff;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 30px;
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.word {
+    margin: 0 15px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+@media all and (max-width: 660px) {
+    .heading-primary {
+        font-size: 36px;
+        letter-spacing: 25px;
+    }
+    .word {
+        margin-right: 0;
+    }
+}
+@media all and (max-width: 540px) {
+    .heading-primary {
+        font-size: 34px;
+        letter-spacing: 23px;
+        margin: 40px 0;
+    }
+}
+@media all and (max-width: 400px) {
+    .heading-primary {
+        font-size: 28px;
+        letter-spacing: 19px;
+    }
+}
+@media all and (max-width: 320px) {
+    .heading-primary {
+        font-size: 24px;
+        letter-spacing: 16px;
+    }
+}

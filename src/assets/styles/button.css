@@ -1,0 +1,38 @@
+.btn {
+    background-color: transparent;
+    background-size: 300% 100%;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 10px 35px;
+    height: 50px;
+    transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+    background-position: 100% 0;
+}
+.btn:active {
+    transform: scale(0.95);
+}
+
+
+@media all and (max-width: 540px) {
+    .btn {
+        font-size: 12px;
+        letter-spacing: 0.4px;
+        padding: 10px 30px;
+    }
+}
+@media all and (max-width: 360px) {
+    .btn {
+        font-size: 11px;
+        letter-spacing: 0.35px;
+        padding: 10px 25px;
+        height: 40px;
+    }
+}
