@@ -17,7 +17,7 @@
   You can view a live demo of the project or watch the video demo below.
 <br />
 <br />
-<a href="https://alinafedoriv-nutrition-analysis.netlify.app/" target="_blank">View Live Demo</a>
+<a href="https://nutrition-analysis-ruddy.vercel.app/" target="_blank">View Live Demo</a>
 </p>
 </div>
 
@@ -134,6 +134,6 @@ This will start the development server, and you can access the application at ht
 
 ## Project Links
 
--   **Live Demo:** [Nutrition Analysis App](https://alinafedoriv-nutrition-analysis.netlify.app/)
+-   **Live Demo:** [Nutrition Analysis App](https://nutrition-analysis-ruddy.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
