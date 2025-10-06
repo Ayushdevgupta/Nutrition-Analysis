@@ -101,7 +101,7 @@ Welcome to the <strong>Nutrition Analysis App</strong> – your go-to tool for a
 Get started with the <strong>Nutrition Analysis App</strong> by following these simple steps:
 
 ```bash
-git clone https://github.com/afedoriv/nutrition-analysis.git
+git clone https://github.com/Ayushdevgupta/Nutrition-Analysis.git
 cd nutrition-analysis
 npm install
 npm start
