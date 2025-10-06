@@ -135,6 +135,5 @@ This will start the development server, and you can access the application at ht
 ## Project Links
 
 -   **Live Demo:** [Nutrition Analysis App](https://alinafedoriv-nutrition-analysis.netlify.app/)
--   **Project Repository:** [Nutrition Analysis GitHub](https://github.com/afedoriv/nutrition-analysis)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
